@@ -1,0 +1,43 @@
+.div
+{
+    display: flex;
+    justify-content: space-around;
+}
+.div button
+{
+    margin-left: 10px;
+    background-color: rgb(147, 144, 143);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+}
+
+.input
+{
+    margin-top: 40px;
+    height: 40px;
+    width: 40%;
+    margin-left: 50px;
+}
+.input::placeholder
+{
+    color: black;
+    font-weight: bold;
+    padding: 100px;
+}
+.select
+{
+   padding: 10px;
+width: 140px;
+    color: black;
+    margin-left: 700px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(147, 154, 154);
+    height: 40px;
+
+}
