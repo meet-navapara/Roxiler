@@ -9,7 +9,7 @@ import style from '../css/table.module.css'
 const PieChart = () => {
     let [State,setstate]=useState({})
     let initialState ={
-        month:5,
+        month:3,
 
     }
     let { formData, handleChange}=useForm(initialState)
@@ -20,7 +20,6 @@ const PieChart = () => {
     }
     useEffect(()=>{
         Getdata()
-        console.log(State);
        },[formData])
        
    async function Getdata()
@@ -57,26 +56,23 @@ const PieChart = () => {
   return (
     <div>
           <form action="" onChange={storedata}>
-        
-       
         <select className={style.select} name='month' onChange={handleChange} defaultValue={formData.month}>
-  <option   value="1">jan</option>
-  <option   value="2">fab</option>
-  <option   value="3" >march</option>
-  <option   value="4">apr</option>
-  <option   value="5">may</option>
-  <option   value="6">jun</option>
-  <option   value="7">july</option>
-  <option   value="8">aug</option>
-  <option   value="9">sept</option>
-  <option   value="10">acto</option>
-  <option   value="11">nov</option>
-  <option   value="12">dec</option>
+        <option   value="1">January</option>
+     <option   value="2">February</option>
+     <option   value="3" >March</option>
+     <option   value="4">April</option>
+     <option   value="5">May</option>
+     <option   value="6">June</option>
+     <option   value="7">July</option>
+     <option   value="8">August</option>
+     <option   value="9">September</option>
+     <option   value="10">October</option>
+     <option   value="11">November</option>
+     <option   value="12">December</option>
 
 </select>
      </form> 
-      <h2>Pie Chart Example</h2>
-     <div style={{height:'600px',width:"600px",margin:"20px auto"}}><Pie data={data} /></div> 
+     <div style={{height:'550px',width:"550px",margin:"20px auto"}}><Pie data={data} /></div> 
     </div>
   );
 };

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useFetch from '../custom Hook/useFetch';
 import useForm from '../custom Hook/useForm';
-import DropDown from './DropDown';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  axios  from "axios";
@@ -19,10 +17,10 @@ function Allrecord(props) {
 
     }
     let { formData, handleChange}=useForm(initialState)
-    console.log(formData);
+
     async function getdata(){
         let {data} = await axios.get(`http://localhost:4000/products/pagination/?title=${formData.data}&color=${formData.data}&month=${parseInt(formData.month)}&page=${page}&limit=${skip}`)
-        console.log(data);
+  
        
         
             setarray(data)
@@ -52,18 +50,18 @@ function Allrecord(props) {
         
            <input className={style.input}type="text" name="data" placeholder='search product based on title' onKeyUp={handleChange}/> 
            <select className={style.select} name='month' onChange={handleChange} defaultValue={formData.month}>
-     <option   value="1">jan</option>
-     <option   value="2">fab</option>
-     <option   value="3" >march</option>
-     <option   value="4">apr</option>
-     <option   value="5">may</option>
-     <option   value="6">jun</option>
-     <option   value="7">july</option>
-     <option   value="8">aug</option>
-     <option   value="9">sept</option>
-     <option   value="10">acto</option>
-     <option   value="11">nov</option>
-     <option   value="12">dec</option>
+     <option   value="1">January</option>
+     <option   value="2">February</option>
+     <option   value="3" >March</option>
+     <option   value="4">April</option>
+     <option   value="5">May</option>
+     <option   value="6">June</option>
+     <option   value="7">July</option>
+     <option   value="8">August</option>
+     <option   value="9">September</option>
+     <option   value="10">October</option>
+     <option   value="11">November</option>
+     <option   value="12">December</option>
 
    </select>
         </form> 
@@ -98,7 +96,7 @@ function Allrecord(props) {
 
             )
         })}
-            </tbody>:<h1>No Products is there</h1>}
+            </tbody>:<tbody><h1>No Products is there</h1></tbody>}
             </Table>
             </div>
             <div className={style.div}>
